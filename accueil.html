@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil Pepinière </title>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+
+    </head>
+    <body>
+        <header>
+
+            <div class="entete">
+
+                <h5> Bienvenue à la Pepiniere Labranche</h5>
+            </div>
+        </header>
+
+        <nav class="navig">
+
+                <ul>
+                    <li class="btn"><a href="accueil.htm">HOME</a></li>
+                    <li class="btn"><a href="../Projet/contenu/propos.html"> A PROPOS</a></li>
+                    <li class="btn"><a href="../Projet/contenu/contact.html">CONTACT</a></li>
+                    <li class="btn"><a href="../Projet/contenu/connexion.html">S'INSCRIRE OU SE CONNEXION</a></li>
+                </ul>
+
+        </nav>
+
+        <div id ="contenu">
+            <img src ="image/image2.jpg" alt="pepiniere" width="200" height="150" title="pepiniere"/>
+
+        </div>
+        <footer>
+          <div id="time"></div>
+          <div id="timeMod"> </div>
+            <div id="copyright">
+                 <p>Copyright Fatou-Kyrylo-Kemberly - 2020-2021 - All Right Reserved</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+
+        // get a new date (locale machine date time)
+        var date = new Date();
+        // afficher date en string
+        var n = date.toDateString();
+        // RLO: afficher date en format FR ? https://stackoverflow.com/questions/40185820/setup-javascript-date-in-french
+        document.getElementById("time").innerHTML = 'Aujourd\'hui, ' + n ;
+
+        function dateMod() {
+  var x = document.lastModified;
+  document.getElementById("timeMod").innerHTML = 'Dernière mise à jour : ' + x;
+}
+window.onload = dateMod ;
+        </script>
+    </body>
+</html>

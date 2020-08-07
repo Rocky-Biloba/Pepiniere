@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil Pepinière </title>
+        <link rel="stylesheet" type="text/css" href="../style/style.css">
+        <!-- <script src="scripts/script.js"></script> -->
+
+    </head>
+    <body>
+        <header>
+            <div class="entete">
+                <h5> Bienvenue à la Pepiniere Labranche</h5>
+            </div>
+        </header>
+
+        <nav class="navig">
+
+                <ul>
+                    <li class="btn"><a href="../accueil.html">HOME</a></li>
+                    <li class="btn"><a href="../contenu/apropos.html"> A PROPOS</a></li>
+                    <li class="btn"><a href="../contenu/contact.html">CONTACT</a></li>
+                    <li class="btn"><a href="../contenu/connexion.html">S'INSCRIRE OU SE CONNEXION</a></li>
+                </ul>
+
+        </nav>
+
+        <div id ="contenu">
+            <div class="imgright">
+                <img src ="../image/header.jpg" alt="pepiniere" width="200" height="150" title="pepiniere"/>
+            </div>
+            <h1>COORDONNÉES</h1>
+            <div class="adress">
+                <p>6400 16e Avenue, Montréal, QC H1X 2S9</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7142.111606435997!2d-73.5886675622943!3d45.5560931375342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91eace22b9bcf%3A0x18799aed17aa23d9!2sColl%C3%A8ge%20de%20Rosemont!5e0!3m2!1sfr!2sca!4v1596519664789!5m2!1sfr!2sca"
+                 width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <p>
+                    Pour nous rejoindre: <br/>
+                    Téléphone: (514)110-1111 <br/>
+                    Télécopieur: (514)110-1111
+                </p>
+             </div>
+            <h1>NOUS ÉCRIRE : </h1>
+            <div id="contact">
+              <form class="formContact" onsubmit="return false">
+                <input type="text" id="nom" placeholder="Nom"/>
+                <br><br>
+                <input type="email" id="courriel" placeholder="Courriel"/>
+                <br><br>
+                <input type="text" id="objet" placeholder="Objet"/>
+                <br><br>
+                <textarea id="message" rows="8" cols="80" placeholder="Votre message .."></textarea>
+                <br><br>
+                <button onclick="envoyerMsg();">Envoyer</button>
+                <br><br>
+              </form>
+            </div>
+        </div>
+        <footer>
+            <div id="copyright">
+                 <p>Copyright Fatou-Kyrylo-Kemberly - 2020-2021 - All Right Reserved</p>
+            </div>
+        </footer>
+
+<script type="text/javascript">
+  var fields = {};
+
+  document.addEventListener("DOMContentLoaded", function() {
+ fields.nom = document.getElementById('nom');
+ fields.courriel= document.getElementById('courriel');
+ fields.objet = document.getElementById('objet');
+ fields.message = document.getElementById('message');
+})
+  // valider champs non-vide
+  function notNull(value){
+ if (value == null || typeof value == 'undefined' ) return false;
+ return (value.length > 0);
+  }
+
+// valider Courriel
+function isEmail(email) {
+let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ return regex.test(String(courriel).toLowerCase());
+}
+
+// matcher un champ avec une fonction de validation
+// sinon, le champ affiche rouge
+function fieldValidation(field, validationFunction) {
+ if (field == null) return false;
+
+ let isFieldValid = validationFunction(field.value)
+ if (!isFieldValid) {
+ field.className = 'placeholderRed';
+ } else {
+ field.className = '';
+ }
+
+ return isFieldValid;
+}
+
+// valider tout les champs
+function isValid() {
+ var valid = true;
+
+ valid &= fieldValidation(fields.nom, notNull);
+ valid &= fieldValidation(fields.courriel, isEmail);
+ valid &= fieldValidation(fields.objet, notNull);
+ valid &= fieldValidation(fields.message, notNull);
+
+ return valid;
+}
+
+
+class User {
+ constructor(nom, courriel, objet, message) {
+ this.nom = nom;
+ this.courriel = courriel;
+ this.objet = objet;
+ this.message = message;
+ }
+}
+
+function envoyerMsg(){
+  if (isValid()){
+    let usr = new User(nom.value, courriel.value, objet.value, message.value);
+
+    alert('Merci ${usr.nom}, nous vous répondrons sous peu à l\'adresse ${usr.courriel}.\nLes messages sont stockés dans la base de données')
+  } else {
+    alert("Assurez-vous de bien remplir tous les champs")
+  }
+}
+
+</script>
+
+    </body>
+</html>

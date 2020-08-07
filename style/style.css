@@ -1,0 +1,115 @@
+nav.navig ul li.btn{
+    list-style-type: none;
+    display: inline-block;
+
+}
+nav.navig ul li.btn a{
+    color: #000000;
+    text-decoration: none;
+    background-color: green;
+    padding: 10px;
+}
+nav.navig ul li.btn:hover a{
+    color: green;
+    background-color: black;
+    transition: 0.3s;
+}
+#contenu img{
+    height: 50%;
+    width: 50%;
+}
+.entete{
+   background-image: url("image/header2.jpg");
+   background-color:green;
+   padding: 1px;
+   text-align: center;
+   font-size: 20px;
+    
+}
+footer p{
+    margin: .5em 0;
+}
+footer{
+    padding: 15px 20px;
+    font-size: .85em;
+}
+footer #copyright{
+    float: left;
+    margin: .5em 0 30px 10%;
+    font-size: 1em;
+}
+#contenu{
+    padding: 10px 20px;
+
+}
+#contenu div.imgright{
+    padding: right;
+}
+
+div#contenu div{
+    display: inline-block;
+    width: 48%;
+}
+fieldset{
+    width: 40%;
+    height: 100%;
+    padding: 10px 20px;
+    vertical-align: top;
+}
+form{
+    padding: 10px 20px;
+}
+form fieldset input{
+    padding: 10px 20px;
+}
+div#imgdroite img {
+    padding: right;
+    width: 100%;
+    height: 100%;
+}
+div#imgdroite img form{
+    display: inline-block;
+    width: 50%;
+}
+div#contenu div#vid{
+
+    vertical-align: top;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: green;
+    list-style-type: none;
+    padding: 10px;
+}
+.dropdown-content{
+display: none;
+position: absolute;
+background-color: whitesmoke;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+z-index: 1;
+
+}
+.dropdown:hover{
+    color: green;
+    background-color: black;
+    transition: 0.3s;
+}
+.dropdown-content a{
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    color: green;
+    background-color: black;
+    transition: 0.3s;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown:hover .dropbtn{
+    background-color: green;
+}
